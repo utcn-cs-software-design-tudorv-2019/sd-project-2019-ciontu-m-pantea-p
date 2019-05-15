@@ -1,8 +1,8 @@
 Chat Application - Ciontu M. si Pantea P.
 
-The server will use a database to store the data and the history of messages sent by each user. 
+The server will use a database to store the data and the history of messages sent by each user.Â 
 A client component that will allow you: - Register
 					- Log in
 					- Choosing the user to talk to
-					- Logging-off. When a user disconnects, they will automatically 						be removed from the online users list.
-Technology : Android Studio
+					- Logging-off. When a user disconnects, they will automatically be removed from the online users list.
+Technology : SpringBoot application with Java 8
