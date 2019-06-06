@@ -1,0 +1,47 @@
+<div class="col-md-12">
+  <div class="chat-page-body row">
+
+    <div class="col-sm-4 tag-container">
+
+    <span class="col-md-12 hello-text">
+      <h5>Hello {{myname}}!</h5>
+    </span>
+
+      <button class="btn btn-logout col-md-12" (click)="logout()">Logout</button>
+      <button class="btn btn-logout col-md-12" (click)="createConversation()">New Conversation</button>
+
+      <div class="list-group">
+        <div *ngFor="let conversationID of conversationIDs">
+          <a (click)="selectConversation(conversationID)" class="list-group-item list-group-item-action tag-item">
+            <app-conversation-tag [conversationID]="conversationID"></app-conversation-tag>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-8 chat-side">
+
+      <input type="text" #textBox class="form-control chat-input" (keyup.enter)="onEnter(textBox)" aria-describedby="textBox" placeholder="Enter message">
+
+      <div class="messages-box">
+        <div class="messages-container" *ngIf="selectedConversationID">
+
+          <!--<virtual-scroller #scroll [items]="messages">-->
+            <!--<div class="card message-container" [ngClass]="getPersonClass(message.name)" *ngFor="let message of scroll.viewPortItems">-->
+              <!--<h5>{{message.name}}</h5>-->
+              <!--<p>{{message.text}}</p>-->
+            <!--</div>-->
+          <!--</virtual-scroller>-->
+
+          <div class="card message-container" [ngClass]="getPersonClass(message.name)" *ngFor="let message of messages">
+            <h5>{{message.name}}</h5>
+            <p>{{message.text}}</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
